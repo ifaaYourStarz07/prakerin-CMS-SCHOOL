@@ -49,7 +49,7 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <nav class="bg-navy-dark text-white shadow-md sticky top-0 z-50 border-b border-navy-mid">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between h-20 items-center">
 <div class="flex items-center space-x-3 cursor-pointer btn-animate" onclick="switchPublicPage('home')">
-<div class="bg-teal-primary p-2 rounded-xl font-black text-xl shadow">13</div>
+<img src="assets/LOGOS.png" alt="Logo SMKN 13 Bandung" onerror="imgErr(this)" class="h-12 w-12 object-contain">
 <div><span class="text-lg font-bold block leading-tight">SMKN 13 BANDUNG</span><span class="text-xs text-teal-accent tracking-wider uppercase">Official Portal</span></div></div>
 <div class="hidden md:flex items-center space-x-8 text-sm font-bold uppercase tracking-wider">
 <button id="navBtn_home" onclick="switchPublicPage('home')" class="nav-item text-teal-accent">Beranda</button>
@@ -58,6 +58,7 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <div class="absolute left-0 w-56 bg-white rounded-xl shadow-xl py-2 hidden group-hover:block z-50 border border-teal-tint">
 <a href="#" onclick="switchAndScroll('profil','visi-misi');return false" class="block px-5 py-3 text-sm text-navy-dark hover:bg-teal-tint font-bold">Visi & Misi</a>
 <a href="#" onclick="switchAndScroll('profil','sejarah');return false" class="block px-5 py-3 text-sm text-navy-dark hover:bg-teal-tint font-bold">Sejarah Sekolah</a>
+<a href="#" onclick="switchAndScroll('profil','struktur');return false" class="block px-5 py-3 text-sm text-navy-dark hover:bg-teal-tint font-bold border-t border-teal-tint">Struktur Organisasi</a>
 <a href="#" onclick="switchAndScroll('profil','pengajar');return false" class="block px-5 py-3 text-sm text-navy-dark hover:bg-teal-tint font-bold border-t border-teal-tint">Tenaga Pengajar</a>
 </div></div>
 <button id="navBtn_jurusan" onclick="switchPublicPage('jurusan')" class="nav-item hover:text-teal-accent">Jurusan</button>
@@ -86,14 +87,14 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <div class="flex flex-col items-center btn-animate cursor-pointer" onclick="switchAndScroll('profil','sejarah')"><div class="w-24 h-24 rounded-full bg-teal-tint flex items-center justify-center text-teal-primary text-4xl mb-6"><i class="fa-solid fa-handshake"></i></div><h4 class="font-bold text-navy-dark text-lg uppercase mb-3">Kemitraan Global</h4><p class="text-sm text-text-muted">Terhubung dengan dunia industri serta institusi pendidikan dalam & luar negeri.</p></div>
 </div></section>
 <section class="py-20 bg-bg-card border-y border-teal-tint/50"><div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
-<div class="w-full md:w-5/12 flex justify-center"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="Kepala Sekolah" class="rounded-3xl shadow-xl w-full max-w-sm object-cover h-[450px]"></div>
+<div class="w-full md:w-5/12 flex justify-center"><img src="assets/agus.webp" alt="Agus Nugroho, S.Pd., M.T." onerror="imgErr(this)" class="rounded-3xl shadow-xl w-full max-w-sm object-cover object-top h-[450px] bg-teal-tint"></div>
 <div class="w-full md:w-7/12 space-y-6">
 <h2 class="text-4xl font-black text-navy-dark">Sambutan Kepala Sekolah</h2>
 <p class="font-medium">Assalamu'alaikum warahmatullahi wabarakatuh, Salam sejahtera untuk kita semua.</p>
 <p class="text-text-muted leading-relaxed">Dengan rasa syukur, saya menyampaikan <b class="text-teal-primary">apresiasi kepada seluruh warga SMK Negeri 13 Bandung</b> atas dedikasi dan semangat dalam memajukan pendidikan. Kami berkomitmen mencetak lulusan yang unggul, berkarakter, dan siap menghadapi tantangan dunia kerja.</p>
 <p class="text-text-muted leading-relaxed">SMK Negeri 13 Bandung terus berkomitmen memberikan <b class="text-navy-dark">pendidikan berkualitas tinggi</b> dengan berbagai program unggulan yang disesuaikan dengan kebutuhan industri.</p>
 <p class="font-medium">Wassalamu'alaikum warahmatullahi wabarakatuh.</p>
-<div><h4 class="font-bold text-xl text-navy-dark">Drs. H. Ino Soprano, M.M.</h4><p class="text-sm font-semibold text-teal-primary">Kepala SMK Negeri 13 Bandung</p></div>
+<div><h4 class="font-bold text-xl text-navy-dark">Agus Nugroho, S.Pd., M.T.</h4><p class="text-sm font-semibold text-teal-primary">Kepala SMK Negeri 13 Bandung</p></div>
 </div></div></section>
 <section class="py-20"><div class="max-w-7xl mx-auto px-4 text-center">
 <h3 class="text-4xl font-black text-navy-dark mb-12">Warta & Berita Terkini</h3>
@@ -125,6 +126,13 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <figcaption class="absolute inset-x-0 bottom-0 z-[5] p-4 sm:p-5 bg-gradient-to-t from-navy-dark/90 to-transparent text-white flex justify-between items-end gap-3"><span class="font-semibold text-sm sm:text-base">Dokumentasi Sejarah SMKN 13 Bandung</span><span id="sejCounter" class="text-sm text-teal-accent font-bold whitespace-nowrap">1 / 6</span></figcaption></div></figure>
 <div id="sejThumbs" class="mt-4 flex gap-3 overflow-x-auto snap-x pb-2"></div>
 </div></div></div>
+
+<!-- STRUKTUR ORGANISASI -->
+<div id="struktur" class="scroll-mt-32 bg-bg-card p-6 sm:p-10 rounded-3xl shadow-sm border border-teal-tint">
+<div class="text-center mb-8"><span class="text-xs font-black uppercase tracking-widest text-teal-primary">Bagan Resmi Kepemimpinan</span><h4 class="text-3xl font-black text-navy-dark mt-1">Struktur Organisasi Sekolah</h4><p id="strukturTahun" class="text-sm text-text-muted mt-1"></p></div>
+<div class="overflow-x-auto"><div id="strukturChart" class="min-w-[1000px] space-y-6"></div></div>
+</div>
+
 <div id="pengajar" class="scroll-mt-32 text-center">
 <h4 class="text-3xl font-black text-navy-dark mb-2">Tenaga Pendidik Profesional</h4>
 <p class="text-text-muted mb-6 text-sm">Arahkan kursor ke kartu untuk menjeda animasi.</p>
@@ -180,13 +188,13 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 
 <footer class="bg-navy-dark text-white py-14 border-t-4 border-teal-primary">
 <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
-<div><div class="flex items-center space-x-3 mb-6"><div class="bg-teal-primary p-2 rounded-xl font-bold text-xl">13</div><span class="font-black text-xl">SMKN 13 Bandung</span></div><p class="text-sm text-teal-tint/80 leading-relaxed">Pusat pendidikan vokasi berbasis Teknologi dan Sains di Kota Bandung.</p></div>
+<div><div class="flex items-center space-x-3 mb-6"><img src="assets/LOGOS.png" alt="Logo" onerror="imgErr(this)" class="h-10 w-10 object-contain bg-white rounded-xl p-1"><span class="font-black text-xl">SMKN 13 Bandung</span></div><p class="text-sm text-teal-tint/80 leading-relaxed">Pusat pendidikan vokasi berbasis Teknologi dan Sains di Kota Bandung.</p></div>
 <div><h4 class="text-teal-accent font-bold mb-5 text-lg">Tautan Cepat</h4><ul class="space-y-3 text-sm font-medium">
 <li><button onclick="switchPublicPage('profil')" class="hover:text-teal-accent">Profil & Visi Misi</button></li>
 <li><button onclick="switchPublicPage('jurusan')" class="hover:text-teal-accent">Konsentrasi Keahlian</button></li>
 <li><button onclick="switchPublicPage('berita')" class="hover:text-teal-accent">Warta Terkini</button></li></ul></div>
 <div><h4 class="text-teal-accent font-bold mb-5 text-lg">Media Sosial</h4><div class="flex space-x-4">
-<a href="#" class="w-10 h-10 rounded-full bg-teal-primary flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.instagram.com/smkn13bandung?stkn=NnhydHlmaTV2NHMy" target="_blank" rel="noopener noreferrer" aria-label="Instagram SMKN 13 Bandung" class="w-10 h-10 rounded-full bg-teal-primary flex items-center justify-center"><i class="fa-brands fa-instagram"></i></a>
 <a href="#" class="w-10 h-10 rounded-full bg-teal-primary flex items-center justify-center"><i class="fa-brands fa-youtube"></i></a>
 <a href="#" class="w-10 h-10 rounded-full bg-teal-primary flex items-center justify-center"><i class="fa-brands fa-facebook"></i></a></div></div>
 <div><h4 class="text-teal-accent font-bold mb-5 text-lg">Kontak Resmi</h4><p class="text-sm text-teal-tint/80 mb-2"><i class="fa-solid fa-envelope w-5"></i> smkn13bandung@gmail.com</p><p class="text-sm text-teal-tint/80"><i class="fa-solid fa-phone w-5"></i> (022) 7830182</p></div>
@@ -199,7 +207,7 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <div id="viewAdmin" class="portal-view flex-col md:flex-row flex-grow min-h-screen bg-bg-page">
 <aside class="w-full md:w-64 bg-slate-900 text-slate-300 flex flex-col flex-shrink-0">
 <div class="p-6 border-b border-slate-800 flex items-center space-x-3">
-<div class="bg-teal-primary text-white p-2 rounded-xl font-bold">13</div>
+<img src="assets/LOGOS.png" alt="Logo" onerror="imgErr(this)" class="h-10 w-10 object-contain bg-white rounded-xl p-1">
 <div><span class="text-white font-bold block text-sm">ADMINISTRATOR</span><span class="text-xs text-slate-400">CMS SMKN 13 Bandung</span></div></div>
 <div class="flex-grow overflow-y-auto py-4 px-3 space-y-1 text-sm" id="adminSidebar"></div>
 <div class="p-4 border-t border-slate-800"><button onclick="logout()" class="w-full bg-rose-600/20 hover:bg-rose-600 text-rose-300 hover:text-white font-semibold py-2.5 rounded-xl text-sm transition flex items-center justify-center space-x-2"><i class="fa-solid fa-right-from-bracket"></i><span>Keluar ke Portal</span></button></div>
@@ -360,6 +368,7 @@ img.style.display='none'}
 const initials=n=>(n||'?').replace(/[^A-Za-z\u00C0-\u024F ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()||'?';
 const av=(g,cls,imgCls='')=>`<div class="${cls} relative overflow-hidden bg-teal-primary text-white font-black flex items-center justify-center flex-shrink-0"><span>${initials(g.nama)}</span>${g.foto?`<img src="${g.foto}" alt="${g.nama}" onerror="imgErr(this)" class="absolute inset-0 w-full h-full object-cover object-top ${imgCls}">`:''}</div>`;
 window.addEventListener('error',e=>{if(e.message&&!/tailwind|Script error/.test(e.message))console.warn('JS error:',e.message)});
+const EK=f=>'assets/ekskul/'+f;
 const IMG=(id,w=300)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
 let db={
 guru:[
@@ -381,9 +390,15 @@ galeriAlbums:[
 {id:'gal3',judul:'Gelar Karya P5 (Pancasila)',kategori:'Kegiatan',mainPhoto:IMG('photo-1511632765486-a01c80cf59af',600),subPhotos:[IMG('photo-1523580494863-6f3031224c94'),IMG('photo-1491438590914-bc09fcaaf77a')]},
 {id:'gal4',judul:'Fasilitas & Lab Jaringan',kategori:'Fasilitas',mainPhoto:IMG('photo-1558494949-ef010cbdcc31',600),subPhotos:[IMG('photo-1544197150-b99a580bb7a8'),IMG('photo-1563986768494-4dee2763ff3f')]}],
 ekskul:[
-{id:'ek1',nama:'Pramuka Ambalan',icon:'fa-campground',desc:'Gerakan pramuka berlandaskan Dasa Darma untuk mencetak siswa berkarakter dan berjiwa kepemimpinan.',jadwal:'Jumat, 15:30 - 17:00',lokasi:'Lapangan Utama',pembina:'Kak Rendi',gambar:IMG('photo-1533630654593-b222d5d44449',800)},
-{id:'ek2',nama:'Paskibra',icon:'fa-flag',desc:'Melatih kedisiplinan, baris-berbaris, dan nasionalisme untuk petugas upacara bendera.',jadwal:'Selasa & Kamis, 16:00',lokasi:'Lapangan Basket',pembina:'Pak Budi',gambar:IMG('photo-1503614472-8c93d56e92ce',800)},
-{id:'ek3',nama:'PMR (Palang Merah Remaja)',icon:'fa-kit-medical',desc:'Pelatihan pertolongan pertama, kesehatan remaja, dan kesiapsiagaan bencana bersama PMI Kota Bandung.',jadwal:'Rabu, 15:30 - 17:00',lokasi:'Ruang UKS',pembina:'Ibu Ratna',gambar:IMG('photo-1579684385127-1ef15d508118',800)}],
+{id:'ek1',nama:'PMR (Palang Merah Remaja)',icon:'fa-kit-medical',desc:'Pelatihan pertolongan pertama, kesehatan remaja, dan kesiapsiagaan bencana.',ig:'@pmrsmkn13_bdg',link:'https://www.instagram.com/pmrsmkn13_bdg?stkn=Z3o4Z3FzdnU4MDc2',gambar:EK('pmr.jpg')},
+{id:'ek2',nama:'IRMA Al-Hikmah',icon:'fa-mosque',desc:'Wadah pembinaan keislaman dan akhlak mulia melalui kegiatan keagamaan di lingkungan sekolah.',ig:'@irmaalhikmah13',link:'https://www.instagram.com/irmaalhikmah13?stkn=ZjllZWM3dmk3YW9h',gambar:EK('irma.jpg')},
+{id:'ek3',nama:'Sastrala',icon:'fa-feather-pointed',desc:'Mengembangkan minat dan bakat siswa di bidang sastra, menulis, dan berkarya kreatif.',ig:'@sastrala.id',link:'https://www.instagram.com/sastrala.id?stkn=ZzN6Ynlxdmg5ajE2',gambar:EK('sastrala.jpeg')},
+{id:'ek4',nama:'Padus (Paduan Suara)',icon:'fa-music',desc:'Melatih olah vokal, harmoni, dan penampilan paduan suara untuk berbagai acara sekolah.',ig:'@voice.smkn13',link:'https://www.instagram.com/voice.smkn13?stkn=MXVmdWNheGVlbjk5eQ==',gambar:EK('padus.jpeg')},
+{id:'ek5',nama:'Banzai',icon:'fa-star',desc:'Wadah kreativitas dan pengembangan minat siswa SMKN 13 Bandung.',ig:'@banzai13vhs',link:'https://www.instagram.com/banzai13vhs?stkn=aGNqZWphazBvMzRy',gambar:EK('banzai.jpg')},
+{id:'ek6',nama:'Karawitan',icon:'fa-drum',desc:'Melestarikan seni musik tradisional Sunda melalui latihan dan pementasan karawitan.',ig:'@aleutan_13',link:'https://www.instagram.com/aleutan_13?stkn=MXU0YmwzeWJvMDNxdQ==',gambar:EK('karawitan.jpg')},
+{id:'ek7',nama:'Pramuka',icon:'fa-campground',desc:'Gerakan pramuka berlandaskan Dasa Darma untuk mencetak siswa berkarakter dan berjiwa kepemimpinan.',ig:'@pramukasmkn13bdg',link:'https://www.instagram.com/pramukasmkn13bdg?stkn=bDEyZXpsYXhrbTZx',gambar:EK('pramuka.jpeg')},
+{id:'ek8',nama:'Paskibra',icon:'fa-flag',desc:'Melatih kedisiplinan, baris-berbaris, dan nasionalisme untuk petugas upacara bendera.',ig:'@paskibra_paramartha13',link:'https://www.instagram.com/paskibra_paramartha13?stkn=MXE1M2VvaHN4dTVvNQ==',gambar:EK('paskibra.jpeg')},
+{id:'ek9',nama:'English Club',icon:'fa-language',desc:'Melatih kemampuan berbahasa Inggris lewat percakapan, debat, dan berbagai kegiatan seru.',ig:'@beengo.smkn13',link:'https://www.instagram.com/beengo.smkn13?stkn=bjF5bmloODEwYWo4',gambar:IMG('photo-1503676260728-1c00da094a0b',800)}],
 siswa:[{id:'s1',nisn:'0051234567',nama:'Andi Pratama',jk:'L',kelas:'XII RPL 1',ta:'2026/2027'},{id:'s2',nisn:'0057654321',nama:'Siti Nurhaliza',jk:'P',kelas:'X APL 1',ta:'2026/2027'}],
 kelas:[{id:'k1',nama:'X APL 1',ruang:'R.Teori APL',wali:'Bu Sarah, S.Pd.'},{id:'k2',nama:'XI TKJ 2',ruang:'R.53',wali:'Pak Budi, S.Kom.'},{id:'k3',nama:'XII RPL 1',ruang:'LAB-RPL',wali:'Refky, M.Kom.'}],
 ruangan:[{id:'r1',kode:'LAB-RPL',nama:'Laboratorium RPL',kapasitas:36},{id:'r2',kode:'R.53',nama:'Ruang Teori 53',kapasitas:36},{id:'r3',kode:'R.Teori APL',nama:'Ruang Teori APL',kapasitas:36}],
@@ -434,6 +449,35 @@ const uid=p=>p+Date.now().toString(36)+Math.floor(Math.random()*99);
 const guruName=id=>(db.guru.find(g=>g.id===id)||{}).nama||'-';
 const now=()=>new Date().toLocaleString('id-ID');
 
+/* ===== DATA STRUKTUR ORGANISASI (ganti '-' dengan nama asli) ===== */
+const STRUKTUR={tahun:'2025 – 2026',kepsek:'-',komite:'-',pendamping:'-',
+bidang:[
+{j:'Wakasek Kurikulum',n:'-',c:'bg-teal-primary',s:[['Koordinator TEFA & BLUD','-'],['Sekretaris BLUD','-'],['Bendahara BLUD','-'],['Staf Perencanaan Kurikulum','-'],['Staf PBM & Evaluasi','-'],['Staf Adm. Akademik','-'],['Kepala Perpustakaan','-']]},
+{j:'Wakasek Kesiswaan',n:'-',c:'bg-navy-mid',s:[['Koordinator BK','-'],['Pembiasaan Akad & Non','-'],['Disiplin & Tatib','-'],['Pembina OSIS & MPK','-'],['Staf Ekstrakurikuler','-'],['Pembinaan Karakter','-']]},
+{j:'Wakasek Sarpras',n:'-',c:'bg-teal-light',s:[['Gedung & Bangunan','-'],['Lab Kimia','-'],['Lab TEI & RPL','-'],['Lingkungan Hidup','-'],['Koordinator KOPMYNTA','-'],['Sekretaris KOPMYNTA','-'],['Bendahara KOPMYNTA','-']]},
+{j:'Wakasek Hubinmas',n:'-',c:'bg-brick-red',s:[['Koordinator BKK','-'],['Staf BKK','-'],['Staf Hubin Humas','-'],['Staf Hubin Humas','-'],['Kemitraan & Magang','-'],['Koordinator SPW','-']]},
+{j:'Koordinator TU',n:'-',c:'bg-navy-dark',s:[['Staf Pendukung','Tenaga Administrasi']]}],
+mutu:{n:'-',s:[['Aset Digital','-'],['Audit Mutu','-'],['Staf SDM','-']]},
+kaprog:[['Kaprog Kimia Analisis','-'],['Kaprog TJKT','-'],['Kaprog PPLG','-']]};
+
+function renderStruktur(){
+const S=STRUKTUR,line='<div class="w-1 h-6 bg-teal-primary mx-auto rounded"></div>',
+box=(l,n,x='')=>`<div class="p-2.5 rounded-xl border border-teal-tint bg-white ${x}"><span class="text-[10px] uppercase font-bold text-text-muted block leading-tight">${l}</span><span class="text-xs font-bold text-navy-dark block">${n||'-'}</span></div>`;
+$('strukturTahun').innerText='Tahun Pelajaran '+S.tahun;
+$('strukturChart').innerHTML=`
+<div class="flex items-center justify-center gap-6">
+ <div class="w-60 p-3 rounded-xl border-2 border-dashed border-teal-light bg-teal-tint text-center"><span class="text-[10px] font-black uppercase text-teal-primary block">Komite Sekolah</span><b class="text-xs text-navy-dark">${S.komite}</b></div>
+ <div class="w-72 p-4 rounded-2xl bg-navy-dark text-white text-center shadow-lg border-b-4 border-teal-primary"><span class="text-[10px] font-black uppercase tracking-wider text-teal-accent block">Kepala Sekolah</span><b class="text-sm">${S.kepsek}</b></div>
+ <div class="w-60 p-3 rounded-xl border-2 border-dashed border-teal-light bg-teal-tint text-center"><span class="text-[10px] font-black uppercase text-teal-primary block">Pendamping Sekolah</span><b class="text-xs text-navy-dark">${S.pendamping}</b></div>
+</div>${line}
+<div class="grid grid-cols-5 gap-3 items-start">${S.bidang.map(b=>`<div class="space-y-2"><div class="p-3 rounded-xl ${b.c} text-white text-center shadow"><span class="text-[10px] font-black uppercase tracking-wider block opacity-90">${b.j}</span><b class="text-xs">${b.n}</b></div><div class="space-y-1.5 border-t-2 border-teal-tint pt-2">${b.s.map(s=>box(s[0],s[1])).join('')}</div></div>`).join('')}</div>
+${line}
+<div class="max-w-md mx-auto space-y-2"><div class="p-3 rounded-xl bg-teal-primary text-white text-center shadow"><span class="text-[10px] font-black uppercase tracking-wider block opacity-90">Wakil Manajemen Mutu & SDM</span><b class="text-xs">${S.mutu.n}</b></div><div class="grid grid-cols-3 gap-2">${S.mutu.s.map(s=>box(s[0],s[1],'text-center')).join('')}</div></div>
+${line}
+<div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">${S.kaprog.map(k=>box(k[0],k[1],'border-2 border-navy-mid')).join('')}</div>
+${line}
+<div class="flex items-center justify-center gap-3 text-xs font-black uppercase tracking-wider"><span class="px-5 py-2 rounded-xl bg-teal-tint text-navy-dark">Guru</span><i class="fa-solid fa-arrows-left-right text-teal-primary"></i><span class="px-5 py-2 rounded-xl bg-teal-tint text-navy-dark">Wali Kelas</span><i class="fa-solid fa-arrow-right text-teal-primary"></i><span class="px-5 py-2 rounded-xl bg-navy-dark text-white">Siswa</span></div>`}
+
 document.addEventListener('DOMContentLoaded',()=>{renderPublicHome();setupSelectOptions();toggleLoginUsername();
 $('adminSidebar').innerHTML=adminMenu.map(([k,ic,l])=>`<button onclick="switchAdminTab('${k}')" data-tab="${k}" class="admin-sidebar-btn w-full text-left px-4 py-3 rounded-xl font-semibold transition hover:bg-slate-800 hover:text-white flex items-center space-x-3"><i class="fa-solid ${ic} w-5"></i><span>${l}</span></button>`).join('');
 switchAdminTab('barcode');});
@@ -449,6 +493,7 @@ function renderPublicHome(){$('homeBeritaGrid').innerHTML=db.berita.slice(0,3).m
 function renderProfilPage(){
 $('misiGrid').innerHTML=misi.map((m,i)=>`<div class="p-6 rounded-2xl bg-bg-page border border-teal-tint flex items-start space-x-4"><span class="w-8 h-8 rounded-full bg-teal-primary text-white flex items-center justify-center font-bold flex-shrink-0">${i+1}</span><p class="leading-relaxed"><strong class="text-navy-dark">${m[0]}:</strong> ${m[1]}</p></div>`).join('');
 $('timelineBox').innerHTML=sejarah.map(s=>`<div class="relative z-10"><div class="absolute -left-12 mt-1 w-8 h-8 ${s[3]} rounded-full border-4 border-bg-page flex items-center justify-center text-white"><i class="fa-solid ${s[4]} text-xs"></i></div><h5 class="text-xl font-bold text-navy-dark">${s[0]}</h5><span class="text-sm font-bold text-teal-primary block mb-2">${s[1]}</span><p class="text-text-muted leading-relaxed text-justify">${s[2]}</p></div>`).join('');
+renderStruktur();
 renderGuruMarquee()}
 function renderGuruMarquee(){
 let items=db.guru.map(g=>`<div class="w-56 flex-shrink-0 bg-bg-card p-6 rounded-3xl border border-teal-tint text-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group cursor-pointer">${av(g,'w-32 h-32 mx-auto rounded-full mb-4 border-4 border-white shadow-md text-4xl','group-hover:scale-110 transition-transform duration-500')}<h4 class="font-bold text-navy-dark text-base group-hover:text-teal-primary transition-colors">${g.nama}</h4><p class="text-xs text-text-muted font-bold mt-2 bg-teal-tint py-1 px-3 rounded-full inline-block">${g.mapel}</p></div>`).join('');
@@ -458,7 +503,7 @@ $('profilGuruMarquee').innerHTML=group+group;
 $('profilGuruMarquee').style.animationDuration=Math.max(20,db.guru.length*rep*6)+'s'}
 function renderJurusanPage(){$('pubJurusanAccordion').innerHTML=db.jurusan.map(j=>`<div class="bg-bg-card rounded-3xl shadow-sm border border-teal-tint overflow-hidden"><button class="accordion-btn w-full px-8 py-6 flex justify-between items-center text-left hover:bg-bg-page" onclick="toggleAccordion('${j.id}')"><div class="flex items-center space-x-5"><div class="w-14 h-14 bg-teal-tint text-teal-primary rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"><i class="fa-solid ${j.icon}"></i></div><h4 class="text-2xl font-black text-navy-dark">${j.nama}</h4></div><i class="fa-solid fa-chevron-down accordion-icon text-teal-primary text-xl"></i></button><div id="acc_${j.id}" class="accordion-content px-4 sm:px-10 bg-white border-t border-teal-tint">
 <div class="relative md:min-h-[620px]"><div class="md:w-[52%] md:h-[290px] pt-4 pb-6 md:pb-0"><h3 class="text-4xl lg:text-5xl font-black text-[#033A82] leading-[1.1]">${j.judul}</h3><p class="text-xl font-bold text-text-main mt-6">${j.sub}</p></div>
-<div class="md:absolute md:top-0 md:right-6 md:bottom-16 md:w-[36%] bg-[#033A82] rounded-3xl overflow-hidden shadow-xl h-80 md:h-auto relative z-10 mb-6 md:mb-0"><img src="${j.kaprogFoto}" alt="${j.kaprogNama}" onerror="imgErr(this)" class="w-full h-full object-cover object-top"><div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 text-white"><span class="text-xs font-black uppercase tracking-widest text-teal-accent">Kepala Program</span><h5 class="font-bold text-lg leading-snug">${j.kaprogNama}</h5></div></div>
+<div class="md:absolute md:top-0 md:right-6 md:bottom-16 md:w-[36%] bg-[#033A82] rounded-3xl overflow-hidden shadow-xl h-80 md:h-auto relative z-10 mb-6 md:mb-0"><img src="${j.kaprogFoto}" alt="${j.kaprogNama}" onerror="imgErr(this)" class="w-full h-full object-cover object-top"></div>
 <div class="bg-[#033A82] text-white rounded-3xl p-8 md:p-12 md:pr-[42%] md:min-h-[330px] flex items-center"><p class="text-justify leading-relaxed">${j.intro}</p></div></div>
 ${j.apa?`<div class="mt-12 bg-bg-page border border-teal-tint rounded-3xl p-8 md:p-10"><h4 class="text-2xl md:text-3xl font-black text-[#033A82] mb-4">${j.apaTitle}</h4><p class="leading-loose text-justify whitespace-pre-line">${j.apa}</p></div>`:''}
 <div class="mt-12"><h4 class="text-2xl md:text-3xl font-black text-[#033A82]">${j.listTitle}</h4>${j.listSub?`<p class="mt-2 text-text-muted">${j.listSub}</p>`:''}<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">${j.items.map((it,i)=>`<div class="bg-bg-page border border-teal-tint rounded-2xl p-6 flex gap-4"><span class="w-9 h-9 rounded-full bg-[#033A82] text-white font-bold flex items-center justify-center flex-shrink-0">${i+1}</span><div>${it.t?`<h5 class="font-bold text-navy-dark mb-2">${it.t}</h5>`:''}<p class="text-sm leading-relaxed text-text-main text-justify whitespace-pre-line">${it.d}</p></div></div>`).join('')}</div></div>
@@ -487,7 +532,7 @@ function galPrev(){const N=galItems().length;if(!N)return;galIdx=(galIdx-1+N)%N;
 function setGalFilter(k){galFilter=k;galIdx=0;renderGaleriPage()}
 function startGalAuto(){clearInterval(galTimer);galTimer=setInterval(()=>{if(galPaused||!$('pubPage_galeri').classList.contains('active'))return;const N=galItems().length;if(N){galIdx=(galIdx+1)%N;positionGal()}},3200)}
 window.addEventListener('resize',()=>{if($('pubPage_galeri').classList.contains('active'))positionGal()});
-function renderEkskulPage(){$('pubEkskulList').innerHTML=db.ekskul.map((e,i)=>`<div class="bg-bg-card rounded-3xl overflow-hidden shadow-sm border border-teal-tint flex flex-col md:flex-row ${i%2?'md:flex-row-reverse':''}"><div class="w-full md:w-5/12 h-64 md:h-auto relative"><img src="${e.gambar}" class="w-full h-full object-cover absolute inset-0"></div><div class="w-full md:w-7/12 p-8 sm:p-12 space-y-6"><div class="flex items-center space-x-4"><div class="w-12 h-12 rounded-xl bg-teal-tint text-teal-primary flex items-center justify-center text-2xl"><i class="fa-solid ${e.icon}"></i></div><h4 class="text-3xl font-black text-navy-dark">${e.nama}</h4></div><p class="font-medium leading-relaxed">${e.desc}</p><div class="grid sm:grid-cols-2 gap-4 text-sm bg-bg-page p-5 rounded-2xl border border-teal-tint/50"><div><span class="block text-text-muted text-xs font-bold uppercase mb-1">Pembina</span><b class="text-navy-dark">${e.pembina}</b></div><div><span class="block text-text-muted text-xs font-bold uppercase mb-1">Jadwal</span><b class="text-navy-dark">${e.jadwal}</b></div><div class="sm:col-span-2"><span class="block text-text-muted text-xs font-bold uppercase mb-1">Lokasi</span><b class="text-navy-dark">${e.lokasi}</b></div></div><button onclick="showModalMsg('Info','Form pendaftaran ${e.nama} segera hadir!')" class="btn-animate bg-brick-red hover:bg-brick-dark text-white font-bold px-8 py-3.5 rounded-full shadow-md">Bergabung Sekarang <i class="fa-solid fa-arrow-right ml-2"></i></button></div></div>`).join('')}
+function renderEkskulPage(){$('pubEkskulList').innerHTML=db.ekskul.map((e,i)=>`<div class="bg-bg-card rounded-3xl overflow-hidden shadow-sm border border-teal-tint flex flex-col md:flex-row ${i%2?'md:flex-row-reverse':''}"><div class="w-full md:w-5/12 h-64 md:h-auto relative bg-teal-tint"><img src="${e.gambar}" alt="${e.nama}" onerror="imgErr(this)" class="w-full h-full object-cover absolute inset-0"></div><div class="w-full md:w-7/12 p-8 sm:p-12 space-y-6"><div class="flex items-center space-x-4"><div class="w-12 h-12 rounded-xl bg-teal-tint text-teal-primary flex items-center justify-center text-2xl"><i class="fa-solid ${e.icon}"></i></div><h4 class="text-3xl font-black text-navy-dark">${e.nama}</h4></div><p class="font-medium leading-relaxed">${e.desc}</p><div class="text-sm bg-bg-page p-5 rounded-2xl border border-teal-tint/50"><span class="block text-text-muted text-xs font-bold uppercase mb-1">Instagram</span><b class="text-navy-dark"><i class="fa-brands fa-instagram mr-1"></i>${e.ig}</b></div><a href="${e.link}" target="_blank" rel="noopener noreferrer" class="btn-animate inline-block bg-brick-red hover:bg-brick-dark text-white font-bold px-8 py-3.5 rounded-full shadow-md">Bergabung Sekarang <i class="fa-solid fa-arrow-right ml-2"></i></a></div></div>`).join('')}
 
 /* ===== AUTH ===== */
 function switchPortalView(v){document.querySelectorAll('.portal-view').forEach(e=>e.classList.remove('active'));$(v).classList.add('active');window.scrollTo(0,0)}
