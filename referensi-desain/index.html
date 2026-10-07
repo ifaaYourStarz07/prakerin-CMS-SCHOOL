@@ -94,7 +94,7 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <!-- HOME -->
 <div id="pubPage_home" class="page-section active flex-grow">
 <div class="relative bg-navy-dark py-24 sm:py-40 px-4 overflow-hidden min-h-[75vh] flex items-center">
-<div class="absolute inset-0" data-slider data-offset="0" data-dots="1"></div>
+<div class="absolute inset-0" data-slider="home" data-offset="0" data-dots="1"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-navy-dark/75 via-navy-dark/55 to-navy-dark/85"></div>
 <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#9ED6CF_1px,transparent_1px)] [background-size:24px_24px]"></div>
 <div class="max-w-4xl mx-auto w-full relative z-10 text-center [text-shadow:0_2px_16px_rgba(0,0,0,.35)]">
@@ -165,7 +165,7 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <!-- JURUSAN -->
 <div id="pubPage_jurusan" class="page-section flex-grow py-16 px-4 max-w-7xl mx-auto space-y-12 w-full">
 <div class="relative rounded-3xl overflow-hidden shadow-xl bg-navy-dark min-h-[260px] sm:min-h-[340px] flex items-center justify-center text-center px-6 py-14">
-<div class="absolute inset-0" data-slider data-offset="1"></div>
+<div class="absolute inset-0" data-slider="jurusan" data-offset="0"></div>
 <div class="absolute inset-0 bg-gradient-to-b from-navy-dark/70 via-navy-dark/60 to-navy-dark/80"></div>
 <div class="relative z-10 max-w-3xl [text-shadow:0_2px_14px_rgba(0,0,0,.35)]"><span class="inline-block mb-4 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur border border-white/20 text-xs font-bold uppercase tracking-[.25em] text-teal-accent">Program Keahlian</span><h3 class="text-3xl sm:text-5xl font-black text-white mb-4">Konsentrasi Keahlian</h3><p class="text-base sm:text-lg text-teal-tint/90">Informasi mendalam seputar kurikulum, fasilitas, dan pimpinan program studi.</p></div></div>
 <div class="space-y-6" id="pubJurusanAccordion"></div></div>
@@ -173,7 +173,7 @@ body{font-family:'Inter',sans-serif;scroll-behavior:smooth}
 <!-- BERITA -->
 <div id="pubPage_berita" class="page-section flex-grow py-16 px-4 max-w-7xl mx-auto space-y-8 w-full">
 <div class="relative rounded-3xl overflow-hidden shadow-lg bg-navy-dark min-h-[200px] sm:min-h-[240px] flex items-center justify-center text-center px-6 py-10 border-b-8 border-teal-primary">
-<div class="absolute inset-0" data-slider data-offset="2"></div>
+<div class="absolute inset-0" data-slider="home" data-offset="6"></div>
 <div class="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy-dark/75 to-navy-mid/85"></div>
 <div class="relative z-10 [text-shadow:0_2px_12px_rgba(0,0,0,.3)]"><span class="inline-block mb-3 px-4 py-1.5 rounded-full bg-teal-primary text-xs font-black uppercase tracking-widest text-white">Informasi Terkini</span><h3 class="text-3xl sm:text-5xl font-black text-white">Warta & Berita</h3><p class="mt-3 text-sm sm:text-base text-teal-tint/90">Kabar, prestasi, dan agenda terbaru SMKN 13 Bandung.</p></div></div>
 <div class="bg-bg-card p-6 rounded-3xl shadow-sm border border-teal-tint flex flex-col md:flex-row justify-between items-center gap-4">
@@ -524,13 +524,21 @@ function toggleMobileMenu(force){const m=$('mobileMenu'),open=force===undefined?
 function mobileGo(p,s){toggleMobileMenu(false);if(s)switchAndScroll(p,s);else switchPublicPage(p)}
 window.addEventListener('resize',()=>{if(window.innerWidth>=768)toggleMobileMenu(false)});
 /* ===== SLIDER BACKGROUND ===== */
-const HOME_FILES=['home1.webp','home2.webp','home3.jpg','home4.jpg'];
+const SLIDER_SETS={
+home:['home1.webp','home2.webp','home3.jpg','home4.jpg','home5.jpg','home6.jpeg','home7.jpg','home8.jpg','home9.jpg','home10.jpg','home11.jpg','home12.jpeg'],
+jurusan:['jurusan1.webp','jurusan2.jpg','jurusan3.jpg','jurusan4.jpeg','jurusan5.jpeg','jurusan6.jpeg']};
+const EXT_TRY=['jpg','jpeg','webp','png','jfif','avif'];
+function resolveImg(file,cb){const m=file.match(/^(.*)\.([a-z0-9]+)$/i),base=m[1],ext=m[2].toLowerCase(),c=[];
+[ext,...EXT_TRY.filter(x=>x!==ext)].forEach(x=>['assets','Assets'].forEach(d=>c.push(d+'/'+encodeURIComponent(base+'.'+x))));
+['assets','Assets'].forEach(d=>c.push(d+'/'+encodeURIComponent(base)));
+let i=0;const t=()=>{if(i>=c.length)return;const im=new Image(),u=c[i];im.onload=()=>cb(u);im.onerror=()=>{i++;t()};im.src=u};t()}
 function initSliders(){document.querySelectorAll('[data-slider]').forEach(box=>{
-const off=(+box.dataset.offset||0)%HOME_FILES.length,files=HOME_FILES.slice(off).concat(HOME_FILES.slice(0,off));
-box.innerHTML=files.map((f,i)=>`<div class="hero-slide ${i?'':'active'}" style="background-image:url('${A(f)}')"></div>`).join('')+(box.dataset.dots?`<div class="absolute bottom-5 inset-x-0 flex justify-center gap-2 z-20">${files.map((_,i)=>`<button type="button" aria-label="Slide ${i+1}" class="slider-dot ${i?'':'active'}"></button>`).join('')}</div>`:'');
+const set=SLIDER_SETS[box.dataset.slider]||SLIDER_SETS.home,off=(+box.dataset.offset||0)%set.length,files=set.slice(off).concat(set.slice(0,off));
+box.innerHTML=files.map((f,i)=>`<div class="hero-slide ${i?'':'active'}"></div>`).join('')+(box.dataset.dots?`<div class="absolute bottom-5 inset-x-0 flex justify-center gap-1.5 sm:gap-2 z-20 px-4 flex-wrap">${files.map((_,i)=>`<button type="button" aria-label="Slide ${i+1}" class="slider-dot ${i?'':'active'}"></button>`).join('')}</div>`:'');
 const slides=[...box.querySelectorAll('.hero-slide')],dots=[...box.querySelectorAll('.slider-dot')];
-files.forEach((f,i)=>{const t=new Image();t.onerror=()=>{slides[i].style.backgroundImage=`url('${A(f).replace(/^assets\//,'Assets/')}')`};t.src=A(f)});
-let cur=0,timer;const go=n=>{slides[cur].classList.remove('active');dots[cur]&&dots[cur].classList.remove('active');cur=(n+slides.length)%slides.length;slides[cur].classList.add('active');dots[cur]&&dots[cur].classList.add('active')};
+const load=i=>{i=(i+slides.length)%slides.length;const sl=slides[i];if(sl.dataset.loaded)return;sl.dataset.loaded='1';resolveImg(files[i],u=>{sl.style.backgroundImage=`url('${u}')`})};
+let cur=0,timer;load(0);load(1);
+const go=n=>{slides[cur].classList.remove('active');dots[cur]&&dots[cur].classList.remove('active');cur=(n+slides.length)%slides.length;load(cur);load(cur+1);slides[cur].classList.add('active');dots[cur]&&dots[cur].classList.add('active')};
 const start=()=>{clearInterval(timer);timer=setInterval(()=>go(cur+1),5500)};
 dots.forEach((d,i)=>d.addEventListener('click',()=>{go(i);start()}));start()})}
 document.addEventListener('DOMContentLoaded',initSliders);
